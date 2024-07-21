@@ -1,9 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const dotenv = require('dotenv');
+dotenv.config(); // Ensure this is called early
+
+console.log(`PORT from .env: ${process.env.PORT}`); // Log to check if PORT is being read
+
 const app = express();
-const dotenv = require("dotenv");
-dotenv.config();
 const port = process.env.PORT || 4000;
 const blogRoutes = require('./routes/blogRoutes');
 const db = require('./config/db');
